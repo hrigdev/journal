@@ -1,0 +1,90 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+
+
+.name{
+  font-size: 3rem;
+}
+
+
+.input_form, .ql-editor{
+  min-height: 60vh;
+  height: 60vh;
+  border: none;
+
+}
+
+.input_form{
+  border: transparent;
+  
+}
+
+.ql-toolbar .ql-snow{
+  border:none;
+}
+.ql-container.ql-snow span{ border: none !important; color:Red}
+
+
+
+.ql-snow .ql-picker {
+  color:white;
+}
+
+.ql-snow .ql-stroke  {
+  color:white;
+  stroke:white;
+}
+
+.ql-snow .ql-fill, .ql-snow .ql-stroke.ql-fill{
+  fill:white;
+  background-color: black;
+}
+
+.ql-editor, .ql_blanks{
+  background-color: black;
+}
+
+.ql-container.ql-snow {
+  border: 1px solid transparent;
+}
