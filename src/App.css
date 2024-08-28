@@ -49,9 +49,9 @@
 
 
 .input_form, .ql-editor{
-  min-height: 60vh;
-  height: 60vh;
+  min-height: 64vh;
   border: none;
+  padding:0;
 
 }
 
@@ -87,4 +87,45 @@
 
 .ql-container.ql-snow {
   border: 1px solid transparent;
+}
+
+
+.navbar{
+  padding:0;
+  overflow-x: hidden;
+  border-right: solid 1px rgb(61, 61, 61)
+}
+
+
+.header-slider{
+  width:100%;
+  overflow-x: hidden;
+}
+
+.header-slider button{
+  width:100%;
+  display: flex;
+}
+
+
+.date-card{
+  background-color: rgb(14, 14, 14);
+  display: flex;
+  flex-direction: column;
+  height:80%;
+  width:40%;
+  border: solid 1px transparent;
+  border-radius: 8px;
+  justify-content: center;
+  color:rgb(218, 218, 218);
+} 
+
+
+.name-card{
+  max-width:60%;
+  overflow: hidden;
+  height: auto;
+  max-height: 100%;
+  overflow-y: hidden;
+  font-size:23px;
 }

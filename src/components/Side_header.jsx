@@ -9,19 +9,19 @@ function Side_header(props){
     return(
         <>
             <nav className="navbar">
-
+        
                 <div className="name">
                     Keeper
                 </div>
                 
-
+                <button onClick={(change)}>new</button>
+                <div className="header-slider">
                 {props.list.map((entry,index)=>{
                                    return( <Journal_name key={index} index={index} title={entry.title} load_entry={props.load_entry} setInput={props.setInput} initial_date={entry.initial_date} />
 )
                 })}
                 
-
-                <button onClick={(change)}>new</button>
+                </div>
             </nav>
 
         </>
