@@ -5,6 +5,8 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import SubdirectoryArrowLeftIcon from '@mui/icons-material/SubdirectoryArrowLeft';
+import CheckIcon from '@mui/icons-material/Check';
+
 function Prev_entry(props) {
     const [markdownContent, setMarkdownContent] = useState('');
     const [isEditing, setIsEditing] = useState(false); // To toggle between read and edit mode
@@ -77,11 +79,14 @@ function Prev_entry(props) {
             {isEditing ? (
                 <>
                     <ReactQuill
+                        placeholder="content"
                         theme="snow"
                         value={content}
                         onChange={handleContentChange}
+                        
                     />
-                    <button onClick={finalChange}>Save</button>
+                    <button  className="save"  onClick={finalChange}>            <CheckIcon />
+                    </button>
                 </>
             ) : (
                 <div className="content">

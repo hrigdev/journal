@@ -34,22 +34,15 @@ function App() {
         prevValue.map(e => (e.index === entry.index ? entry : e))
     );
     }
-    setInput(0); // Reset input view after saving
+    setInput(0); 
     setLoad(entry); // Load the newly created/updated entry
 
 
-    
     }
 
-    useEffect(() => {
-      console.log(entries);
-    }, [entries]);
-  
 
     function load_entry(index){
-      console.log(entries[index]);
       setLoad(entries[index]);
-      console.log(load)
       setInput(0); // Ensure the input state is set correctly when loading an entry
 
     }
@@ -58,7 +51,7 @@ function App() {
     <>
 
   {input==0 && load && entries.length!==0?<Prev_entry submit_entry={submit_entry} load={load}/>:<Journal_entry save_entry={submit_entry} />}
-    <Side_header list={entries} load_entry={load_entry} setInput={setInput}/>
+    <Side_header load={load}   list={entries} load_entry={load_entry} setInput={setInput} i={load.index} />
 
     </>
 

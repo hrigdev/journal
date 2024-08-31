@@ -109,11 +109,12 @@
 
 
 .date-card{
-  background-color: rgb(14, 14, 14);
+  background-color:#1E1E1E;
+  color:#BBBCBC;
   display: flex;
   flex-direction: column;
   height:80%;
-  width:40%;
+  width:30%;
   border: solid 1px transparent;
   border-radius: 8px;
   justify-content: center;
@@ -122,10 +123,23 @@
 
 
 .name-card{
-  max-width:60%;
+  width:58%;
+  max-width:58%;
   overflow: hidden;
   height: auto;
   max-height: 100%;
   overflow-y: hidden;
   font-size:23px;
+  text-align:left;
+}
+
+.save{
+  position: absolute;
+  top:8.7rem;
+
+}
+
+
+.save:hover{
+  border:none;
 }

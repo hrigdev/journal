@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=SUSE:wght@100;200;300;400;500;600;700;800&display=swap');
+
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -24,6 +27,20 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  
+}
+
+
+
+.name{
+  font-family: 'SUSE', sans-serif;
+  font-weight: 100;
+  color:rgb(68, 68, 68);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.name:hover{
+  cursor:none;
 }
 
  button {
@@ -41,10 +58,7 @@ button:hover {
   border-color: #646cff;
 }
 
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
+
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -54,6 +68,7 @@ button:focus-visible {
 
   a:hover {
     color: #747bff;
+
   }
 
   button {
@@ -113,7 +128,11 @@ button:focus-visible {
 }
 
 .ql-editor{
-    padding: 2rem;
+    padding: 1rem 7rem;
+    background-color: transparent;
+    font-size: 13px;
+    height:67vh;
+    
 }
 
 
@@ -125,45 +144,136 @@ button:focus-visible {
     justify-content: space-between;
     padding-right:3px;
     align-items: center;
+    padding-bottom: 0;
+    margin-bottom: .3px;
+
 
 }
 
 .header-slider button{
     border-radius: 0px;
-    border-bottom: solid 1px rgb(61, 61, 61);
+
 }
 
+
+
+.Active{
+  background-color: #44C0FF;
+
+}
 
 .header-slider{
     overflow-y: scroll;
     position: relative;
     top:9px;
-    width: 102%;
+    width: 100%;
     padding:0;
     height:82vh;
     scroll-behavior: smooth;
 }
 
 
-.header-slider::-webkit-scrollbar {
-    width: 5px;
+.ql-editor::-webkit-scrollbar {
+    width: 1px;
   }
   
 
-  /* .header-slider::-webkit-scrollbar-track {
-    border-radius: 2px;
+  .ql-editor::-webkit-scrollbar-track {
+    border-radius: 1px;
   }
 
-  .header-slider::-webkit-scrollbar-thumb {
-    background: rgb(43, 43, 43);
-    border-radius: 10px;
+  .ql-editor::-webkit-scrollbar-thumb {
+    background: rgb(255, 255, 255);
   }
   
-  .header-slider::-webkit-scrollbar-thumb:hover {
+  .ql-editor::-webkit-scrollbar-thumb:hover {
     background: #717171;
-  } */
+  }
 
 
 .name{
     margin-bottom: 10px;
 }
+
+
+.ql-editor.ql-blank::before {
+  color: #888; /* Placeholder text color */
+  font-style: italic; /* Placeholder text style */
+  font-size: 16px; /* Placeholder text size */
+  font-family: 'Arial', sans-serif; /* Placeholder text font */
+  padding: 6rem;
+  padding-top:0rem;
+  
+
+
+}
+
+.ql-editor{
+  overflow-y: scroll;
+}
+
+
+
+
+.done:hover{
+  border:none
+}
+
+.done:active{
+  border: none;
+}
+
+.done:focus, .done::focus-visible{
+  border:none;
+}
+
+.ql-snow .ql-picker-options{
+  background-color: black;
+}
+
+.done{
+  color:white;
+  position: absolute;
+  cursor: pointer;
+
+}
+
+.notdone{
+  color:red(93, 93, 93);
+  position: absolute;
+  top:9.6rem;
+  cursor:default;
+  height:2.1rem;
+  width:1.3rem;
+  display: flex;
+  justify-content: center;
+  left:2px;
+
+}
+
+
+.notdone:hover{
+  border: none;
+
+}
+
+
+.done{
+  all: none;
+  position: absolute;
+  top:9.6rem;
+  height:2.1rem;
+  width:1.3rem;
+  display: flex;
+  justify-content: center;
+  left:2px;
+
+}
+
+
+
+.MuiSvgIcon-root, .MuiSvgIcon-fontSizeMedium, .css-i4bv87-MuiSvgIcon-root{
+  font-size:1.2rem !important
+
+}
+
