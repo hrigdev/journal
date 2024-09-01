@@ -40,7 +40,7 @@ h1 {
 }
 
 .name:hover{
-  cursor:none;
+  cursor:default;
 }
 
  button {

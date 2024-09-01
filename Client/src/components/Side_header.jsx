@@ -1,14 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Journal_name from "./Journal_name";
 
 function Side_header(props) {
     function change() {
-        props.setInput(1);
-    }
+        props.setInput(1);    }
 
+  
     return (
         <>
-            <nav className="navbar">
+            <nav className="navbar ">
                 <div className="name">KEEPER</div>
                 <button onClick={change}>new</button>
                 <div className="header-slider">
@@ -24,14 +24,16 @@ function Side_header(props) {
                                 setInput={props.setInput}
                                 initial_date={entry.initial_date}
                                 name={status}
+                                // delete={props.delete}
                             />
                         );
                     })}
                 </div>
-                
             </nav>
         </>
     );
 }
 
 export default Side_header;
+
+

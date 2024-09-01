@@ -4,7 +4,6 @@ function Journal_name(props) {
   function finder(event) {
     props.load_entry(event.target.name);
     props.setInput(0);
-    console.log(props);
   }
 
   return (
