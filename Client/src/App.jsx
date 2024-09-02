@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import Journal_entry from "./components/Journal_entry";
 import Side_header from "./components/Side_header";
@@ -57,7 +58,23 @@ function App() {
   }
 
   
+  async function delete_(index){
+    try {
+      console.log("eee");
 
+      setEntries((prevEntries) => {
+        console.log("del");
+        return prevEntries.filter((entry) => entry.index !== index);
+      });
+
+      await axios.patch(await axios.delete(`http://localhost:3000/journal/${index}`)    );
+
+    } catch (error) {
+      console.error("Error deleting entry:", error);
+    }
+  }
+
+  
   return (
     <>
       {entries.length > 0 ? (
@@ -75,9 +92,11 @@ function App() {
         load_entry={load_entry}
         setInput={setInput}
         i={load?.index}
+        delete_={delete_}
       />
     </>
   );
 }
 
 export default App;
+import React from "react";

@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
 import Journal_name from "./Journal_name";
+import "../app.css";
 
 function Side_header(props) {
     function change() {
         props.setInput(1);    }
 
-  
+
     return (
         <>
             <nav className="navbar ">
@@ -17,6 +18,7 @@ function Side_header(props) {
 
                         return (
                             <Journal_name
+                                del={entry.index}
                                 key={index}
                                 index={index}
                                 title={entry.title}
@@ -24,7 +26,7 @@ function Side_header(props) {
                                 setInput={props.setInput}
                                 initial_date={entry.initial_date}
                                 name={status}
-                                // delete={props.delete}
+                                delete_={props.delete_}
                             />
                         );
                     })}
@@ -35,5 +37,3 @@ function Side_header(props) {
 }
 
 export default Side_header;
-
-
