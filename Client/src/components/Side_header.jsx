@@ -4,7 +4,9 @@ import "../app.css";
 
 function Side_header(props) {
     function change() {
-        props.setInput(1);    }
+        props.setInput(1);    
+        console.log(props.input_value)
+    }
 
 
     return (
@@ -14,8 +16,7 @@ function Side_header(props) {
                 <button onClick={change}>new</button>
                 <div className="header-slider">
                     {props.list.map((entry, index) => {
-                        let status = entry.index === props.i ? "Active" : "Passive";
-
+                        let status = props.input_value==0 &&   entry.index === props.i? "Active" : "Passive";
                         return (
                             <Journal_name
                                 del={entry.index}

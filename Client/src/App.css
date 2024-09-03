@@ -116,7 +116,7 @@
 
 
 .date-card{
-  background-color:#1E1E1E;
+  background-color:#1a1a1a;
   color:#BBBCBC;
   display: flex;
   flex-direction: column;
@@ -150,3 +150,24 @@
 .save:hover{
   border:none;
 }
+
+
+.main-header{
+  position: relative;
+}
+
+.del{
+  position: absolute;
+  right:0;
+  bottom: 0;
+  border: transparent 1px solid;
+}
+
+.del button:hover{
+  border:transparent 1px solid;
+  right:0;
+  bottom: 0;
+}
+
+
+

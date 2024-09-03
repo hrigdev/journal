@@ -152,6 +152,7 @@ button:hover {
     align-items: center;
     padding-bottom: 0;
     margin-bottom: .3px;
+    position: relative;
 
 
 }
@@ -241,6 +242,7 @@ button:hover {
   color:white;
   position: absolute;
   cursor: pointer;
+  border: none;
 
 }
 
@@ -254,6 +256,7 @@ button:hover {
   display: flex;
   justify-content: center;
   left:2px;
+  border: none;
 
 }
 

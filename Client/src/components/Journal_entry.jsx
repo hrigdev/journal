@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import CheckIcon from '@mui/icons-material/Check';
+import Prev_entry from "./Prev_entry";
 
 function Journal_entry(props) {
-  const [checkent, setChecksetent]= useState(false);
-
+  const [checkent, setChecksetent] = useState(false);
+  const [isEditing, setEditing] = useState(true);
   const [entry, setEntry] = useState({
     index: null,
     title: "",
@@ -25,7 +26,8 @@ function Journal_entry(props) {
   function submit_entry(event) {
     event.preventDefault();
     props.save_entry(entry);
-    console.log(entry);
+    props.setInput(0);
+    setEditing(false);
   }
 
   function input_entry(event) {
@@ -47,27 +49,32 @@ function Journal_entry(props) {
 
   return (
     <>
-      <form className="journal_entry" onSubmit={submit_entry}>
-        <input
-          value={entry.title}
-          className="title"
-          name="title"
-          placeholder="Title"
-          type="text"
-          onChange={input_entry}
-          autoFocus="on"
-        />
-        <ReactQuill
-          placeholder="Content..."
-          theme="snow"
-          value={entry.content}
-          onChange={handleContentChange}
-        />
-          <button className={checkent?"done":"notdone"} type="submit"  disabled={!checkent} >
-            <CheckIcon/>
-          </button>
-        
-      </form>
+      {isEditing ? (
+        <div>
+          <form className="journal_entry" onSubmit={submit_entry}>
+            <input
+              value={entry.title}
+              className="title"
+              name="title"
+              placeholder="Title"
+              type="text"
+              onChange={input_entry}
+              autoFocus
+            />
+            <ReactQuill
+              placeholder="Content..."
+              theme="snow"
+              value={entry.content}
+              onChange={handleContentChange}
+            />
+            <button className={checkent ? "done" : "notdone"} type="submit" disabled={!checkent}>
+              <CheckIcon />
+            </button>
+          </form>
+        </div>
+      ) : (
+        <Prev_entry submit_entry={props.submit_entry} setInput={props.setInput} load={entry} />
+      )}
     </>
   );
 }

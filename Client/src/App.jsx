@@ -33,6 +33,9 @@ function App() {
       let saveTime = new Date().toString();
       entry.initial_date = saveTime;
       setEntries((prevValue) => [...prevValue, entry]);
+      setLoad(entries[entry.index]);
+      setInput(0);
+      load_entry(entry.index);
       try {
         await axios.post("http://localhost:3000/journal_entry", entry);
       } catch (error) {
@@ -48,8 +51,9 @@ function App() {
       await axios.patch(await axios.patch(`http://localhost:3000/update_journal/${entry.index}`, entry)    );
 
     }
+    setLoad(entries[entry.index]);
     setInput(0);
-    setLoad(entry);
+    load_entry(entry.index);
   }
 
   function load_entry(index) {
@@ -74,17 +78,17 @@ function App() {
     }
   }
 
-  
+ 
   return (
     <>
       {entries.length > 0 ? (
         input === 0 && load ? (
-          <Prev_entry submit_entry={submit_entry} load={load} />
+          <Prev_entry submit_entry={submit_entry} load={load}  setInput={setInput}          />
         ) : (
-          <Journal_entry save_entry={submit_entry} />
+          <Journal_entry save_entry={submit_entry} load={load} setInput={setInput}/>
         )
       ) : (
-          <Journal_entry save_entry={submit_entry} />
+          <Journal_entry save_entry={submit_entry} submit_entry={submit_entry} load={load}  setInput={setInput}/>
       )}
       <Side_header
         load={load}
@@ -93,6 +97,7 @@ function App() {
         setInput={setInput}
         i={load?.index}
         delete_={delete_}
+        input_value= {input}
       />
     </>
   );
